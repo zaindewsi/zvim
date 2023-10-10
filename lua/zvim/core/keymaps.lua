@@ -1,9 +1,12 @@
-local opts = { noremap = true, silent = true }
+local opts = {
+    noremap = true,
+    silent = true
+}
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---Remap space as leader key
+-- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 
 -- Modes
@@ -39,9 +42,6 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>gv-gv", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>gv-gv", opts)
-
--- Nvim Tree
-keymap("n", "<C-n>", "<cmd> NvimTreeToggle <CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", "<cmd> Telescope find_files <CR>", opts)
