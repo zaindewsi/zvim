@@ -20,7 +20,7 @@ opt.smartcase = true
 -- Numbers
 opt.number = true
 opt.numberwidth = 4
-opt.relativenumber = true
+opt.relativenumber = false
 opt.ruler = false
 
 -- disable nvim intro
@@ -45,7 +45,7 @@ opt.conceallevel = 0
 opt.fileencoding = "utf-8"
 opt.hlsearch = true
 opt.pumheight = 10
-opt.showmode = false
+opt.showmode = true
 opt.showtabline = 2
 opt.wrap = false
 opt.scrolloff = 10
