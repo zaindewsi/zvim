@@ -1,4 +1,8 @@
 local opt = vim.opt
+local g = vim.g
+
+g.mapleader = " "
+g.maplocalleader = " "
 
 opt.laststatus = 3 -- global statusline
 opt.title = true
@@ -50,3 +54,5 @@ opt.showtabline = 2
 opt.wrap = false
 opt.scrolloff = 10
 opt.sidescrolloff = 10
+
+g.netrw_liststyle = 3
