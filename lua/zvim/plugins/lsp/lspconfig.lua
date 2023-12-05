@@ -70,6 +70,41 @@ return {
          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
       end
 
+      local config = {
+         -- disable virtual text
+         virtual_text = false,
+         -- show signs
+         signs = {
+            active = signs,
+         },
+         update_in_insert = true,
+         underline = true,
+         severity_sort = true,
+         float = {
+            focusable = false,
+            style = "minimal",
+            border = "rounded",
+            source = "always",
+            header = "",
+            prefix = "",
+         },
+      }
+
+      vim.diagnostic.config(config)
+
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+         border = "rounded",
+      })
+
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+         border = "rounded",
+      })
+
+      vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+         update_in_insert = true,
+         underline = false,
+      })
+
       -- configure html server
       lspconfig["html"].setup {
          capabilities = capabilities,
@@ -129,12 +164,6 @@ return {
          capabilities = capabilities,
          on_attach = on_attach,
          filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-      }
-
-      -- configure python server
-      lspconfig["pyright"].setup {
-         capabilities = capabilities,
-         on_attach = on_attach,
       }
 
       -- configure lua server (with special settings)
