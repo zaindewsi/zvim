@@ -17,7 +17,7 @@ opt.smartindent = true
 
 -- disable tilde on end of buffer: https://github.com/neovim/neovim/pull/8546#issuecomment-643643758
 opt.fillchars = {
-    eob = " "
+   eob = " ",
 }
 
 opt.ignorecase = true
@@ -46,7 +46,7 @@ opt.swapfile = false
 opt.writebackup = false
 
 opt.backup = false
-opt.completeopt = {"menuone", "noselect"}
+opt.completeopt = { "menuone", "noselect" }
 opt.conceallevel = 0
 opt.fileencoding = "utf-8"
 opt.hlsearch = true
